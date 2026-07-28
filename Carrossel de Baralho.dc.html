@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/classical-fb1ea1b1-6740-4f31-bbe3-24e7d7ef7132/styles.css">
+  <script src="_ds/classical-fb1ea1b1-6740-4f31-bbe3-24e7d7ef7132/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: var(--color-bg); }
+  </style>
+</helmet>
+<section style="min-height: 720px; background: var(--color-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-8) var(--space-4); font-family: var(--font-body); gap: var(--space-6); user-select: none;">
+
+  <div style="text-align: center; max-width: 560px;">
+    <div style="font-family: var(--font-body); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: var(--space-2);">Módulos do curso</div>
+    <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 34px; margin: 0; color: var(--color-text);">Arraste para explorar as aulas</h2>
+  </div>
+
+  <div style="position: relative; width: 300px; height: 400px; margin: var(--space-6) 0;">
+    <sc-for list="{{ cards }}" as="card" hint-placeholder-count="6">
+      <div
+        style="{{ card.style }}"
+        onPointerDown="{{ card.onDown }}"
+        onPointerMove="{{ card.onMove }}"
+        onPointerUp="{{ card.onUp }}"
+        onPointerCancel="{{ card.onUp }}"
+      >
+        <div class="plate" style="width: 100%; height: 100%; margin: 0; box-shadow: var(--shadow-lg); border-radius: var(--radius-md); overflow: hidden; position: relative;">
+          <image-slot id="{{ card.slotId }}" shape="rect" placeholder="{{ card.placeholder }}" style="width: 100%; height: 100%; border-radius: 0;"></image-slot>
+          <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,18,15,0.82) 0%, rgba(20,18,15,0.28) 42%, rgba(20,18,15,0) 62%); pointer-events: none;"></div>
+          <div style="position: absolute; left: var(--space-4); right: var(--space-4); bottom: var(--space-4); pointer-events: none;">
+            <span class="tag tag-accent" style="margin-bottom: var(--space-2); display: inline-block;">Módulo {{ card.number }}</span>
+            <div style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 22px; color: #f3f2f2; line-height: 1.15;">{{ card.title }}</div>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: var(--space-4);">
+    <button type="button" class="btn btn-secondary btn-icon" aria-label="Anterior" onClick="{{ goPrev }}">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div style="display: flex; gap: var(--space-2);">
+      <sc-for list="{{ dots }}" as="dot" hint-placeholder-count="6">
+        <span style="{{ dot.style }}"></span>
+      </sc-for>
+    </div>
+    <button type="button" class="btn btn-secondary btn-icon" aria-label="Próximo" onClick="{{ goNext }}">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+  </div>
+
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const MODULES = [
+  { title: 'Fundamentos e primeiros passos', placeholder: 'Capa do módulo 1' },
+  { title: 'Planejamento estratégico', placeholder: 'Capa do módulo 2' },
+  { title: 'Ferramentas essenciais', placeholder: 'Capa do módulo 3' },
+  { title: 'Prática guiada', placeholder: 'Capa do módulo 4' },
+  { title: 'Estudos de caso', placeholder: 'Capa do módulo 5' },
+  { title: 'Projeto final', placeholder: 'Capa do módulo 6' },
+];
+
+const THRESHOLD = 90;
+const SWIPE_MS = 420;
+
+class Component extends DCLogic {
+  state = {
+    order: MODULES.map((_, i) => i),
+    dragging: false,
+    startX: 0,
+    dragX: 0,
+    flyingDir: 0,
+  };
+
+  onDown = (e) => {
+    if (this.state.flyingDir) return;
+    e.currentTarget.setPointerCapture && e.currentTarget.setPointerCapture(e.pointerId);
+    this.setState({ dragging: true, startX: e.clientX, dragX: 0 });
+  };
+
+  onMove = (e) => {
+    if (!this.state.dragging) return;
+    this.setState({ dragX: e.clientX - this.state.startX });
+  };
+
+  onUp = () => {
+    if (!this.state.dragging) return;
+    const dx = this.state.dragX;
+    if (Math.abs(dx) > THRESHOLD) {
+      const dir = dx > 0 ? 1 : -1;
+      this.setState({ dragging: false, flyingDir: dir, dragX: dir * 900 });
+      setTimeout(() => this.advance(1), SWIPE_MS);
+    } else {
+      this.setState({ dragging: false, dragX: 0 });
+    }
+  };
+
+  advance = (dir) => {
+    this.setState((s) => {
+      const order = [...s.order];
+      if (dir === 1) order.push(order.shift());
+      else order.unshift(order.pop());
+      return { order, dragging: false, dragX: 0, flyingDir: 0 };
+    });
+  };
+
+  goNext = () => {
+    if (this.state.flyingDir) return;
+    this.setState({ flyingDir: -1, dragX: -900 });
+    setTimeout(() => this.advance(1), SWIPE_MS);
+  };
+
+  goPrev = () => {
+    if (this.state.flyingDir) return;
+    this.advance(-1);
+  };
+
+  renderVals() {
+    const { order, dragging, dragX, flyingDir } = this.state;
+    const cards = MODULES.map((m, i) => {
+      const p = order.indexOf(i);
+      const isTop = p === 0;
+      let tx = p * 18;
+      let rot = p * 6;
+      const scale = 1 - p * 0.05;
+      const opacity = Math.max(1 - p * 0.16, 0.3);
+      const z = MODULES.length - p;
+
+      if (isTop && dragging) {
+        tx += dragX;
+        rot += dragX / 22;
+      } else if (isTop && flyingDir) {
+        tx = dragX;
+        rot = dragX / 18;
+      }
+
+      const style = {
+        position: 'absolute',
+        inset: 0,
+        width: '100%',
+        height: '100%',
+        transformOrigin: 'center bottom',
+        transform: `translateX(${tx}px) rotate(${rot}deg) scale(${scale})`,
+        opacity: isTop && flyingDir ? 0 : opacity,
+        zIndex: z,
+        transition: isTop && dragging
+          ? 'none'
+          : 'transform 0.48s cubic-bezier(.22,1,.36,1), opacity 0.42s ease',
+        cursor: isTop ? (dragging ? 'grabbing' : 'grab') : 'default',
+        touchAction: 'none',
+      };
+
+      return {
+        style,
+        number: String(i + 1).padStart(2, '0'),
+        title: m.title,
+        placeholder: m.placeholder,
+        slotId: 'course-cover-' + i,
+        onDown: isTop ? this.onDown : null,
+        onMove: isTop ? this.onMove : null,
+        onUp: isTop ? this.onUp : null,
+      };
+    });
+
+    const activeIdx = order[0];
+    const dots = MODULES.map((_, i) => ({
+      style: {
+        width: 7,
+        height: 7,
+        borderRadius: '50%',
+        background: i === activeIdx ? 'var(--color-accent-700)' : 'var(--color-divider)',
+        transition: 'background 0.3s ease',
+        display: 'inline-block',
+      },
+    }));
+
+    return { cards, dots, goNext: this.goNext, goPrev: this.goPrev };
+  }
+}
+
+</script>
+</body>
+</html>
