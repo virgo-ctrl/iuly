@@ -92,6 +92,11 @@ a {
   line-height: 1.2;
 }
 
+.title-script-accent {
+  font-size: 1.6em;
+  color: var(--accent-nude);
+}
+
 .font-serif {
   font-family: var(--font-serif);
 }
@@ -1455,11 +1460,59 @@ a {
 }
 
 @media (max-width: 640px) {
-  .hero-title { font-size: 2.15rem; }
+  /* Typography */
+  .hero-title { font-size: 1.9rem; }
+  .section-title { font-size: 1.75rem; }
+  .solution-title { font-size: 1.6rem; }
+
+  /* Section "Não reconhece": reduz o font-script embutido no título */
+  .section-title .font-script { font-size: 1.2em; }
+  .title-script-accent { font-size: 1.2em; }
+
+  /* Layout grids */
   .pain-grid { grid-template-columns: 1fr; }
   .modules-grid { grid-template-columns: 1fr; }
   .outcomes-grid { grid-template-columns: 1fr; }
   .social-proof-grid { grid-template-columns: 1fr; }
   .vs-comparison { grid-template-columns: 1fr; }
   .guarantee-box { flex-direction: column; text-align: center; }
+
+  /* Sections: padding reduzido */
+  .section-padding { padding: 3.5rem 0; }
+  .hero-section { padding: 3rem 0 3.5rem 0; }
+
+  /* Solution banner */
+  .solution-banner { padding: 2.25rem 1.25rem; }
+
+  /* Pricing card */
+  .pricing-card { padding: 2.25rem 1.25rem; }
+
+  /* Closing card */
+  .closing-card { padding: 2.25rem 1.25rem; }
+  .closing-section { padding: 3.5rem 0; }
+
+  /* Authority card */
+  .authority-card-brand { padding: 2rem 1.25rem; gap: 2rem; }
+
+  /* Modal: garante que caiba na tela mobile sem overflow */
+  .qualify-modal-overlay { padding: 1rem; align-items: flex-end; }
+  .qualify-modal-card {
+    padding: 2rem 1.25rem;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-title { font-size: 1.15rem; }
+
+  /* Sticky bar: evita overflow horizontal */
+  .sticky-inner { flex-wrap: wrap; gap: 0.5rem; }
+  .sticky-info { flex: 1; min-width: 0; }
+  .sticky-text-title { font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sticky-text-price { font-size: 0.75rem; }
+  .sticky-btn { max-width: none; flex: 1; font-size: 0.8rem; padding: 0.65rem 0.75rem; }
+
+  /* Top bar: evita overflow */
+  .top-bar { font-size: 0.72rem; padding: 0.5rem 0.75rem; }
+  .top-bar-inner { gap: 0.4rem; }
+  .countdown-box { font-size: 0.78rem; }
 }
