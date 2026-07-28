@@ -81,6 +81,7 @@ a {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
 /* Typography Classes */
@@ -1494,22 +1495,51 @@ a {
   /* Authority card */
   .authority-card-brand { padding: 2rem 1.25rem; gap: 2rem; }
 
-  /* Modal: garante que caiba na tela mobile sem overflow */
-  .qualify-modal-overlay { padding: 1rem; align-items: flex-end; }
+  /* Modal: sheet vindo de baixo, sem overflow horizontal */
+  .qualify-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+    justify-content: stretch;
+  }
   .qualify-modal-card {
-    padding: 2rem 1.25rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 2rem 1.25rem 2.5rem;
     border-radius: var(--radius-md) var(--radius-md) 0 0;
-    max-height: 90vh;
+    max-height: 92vh;
     overflow-y: auto;
   }
   .modal-title { font-size: 1.15rem; }
+  .modal-subtitle { font-size: 0.82rem; }
 
-  /* Sticky bar: evita overflow horizontal */
-  .sticky-inner { flex-wrap: wrap; gap: 0.5rem; }
-  .sticky-info { flex: 1; min-width: 0; }
-  .sticky-text-title { font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .sticky-text-price { font-size: 0.75rem; }
-  .sticky-btn { max-width: none; flex: 1; font-size: 0.8rem; padding: 0.65rem 0.75rem; }
+  /* Sticky bar: layout em linha única, info cresce e botão fixo */
+  .sticky-bar { padding: 0.6rem 0; }
+  .sticky-inner { gap: 0.5rem; flex-wrap: nowrap; }
+  .sticky-info {
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 0.5rem;
+    overflow: hidden;
+  }
+  .sticky-info img { width: 32px; height: 32px; flex-shrink: 0; }
+  .sticky-text-title {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sticky-text-price { font-size: 0.72rem; }
+  .sticky-btn {
+    flex-shrink: 0;
+    max-width: 140px;
+    font-size: 0.72rem;
+    padding: 0.6rem 0.85rem;
+    white-space: nowrap;
+  }
+
+  /* Container: reduz padding lateral no mobile */
+  .container { padding: 0 1rem; }
 
   /* Top bar: evita overflow */
   .top-bar { font-size: 0.72rem; padding: 0.5rem 0.75rem; }
