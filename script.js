@@ -94,6 +94,14 @@ function initQualificationModal() {
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    if (typeof fbq === 'function') {
+      fbq('track', 'ViewContent', {
+        content_name: 'Recomeço Pós-Parto 30 Dias',
+        content_category: 'Curso',
+        currency: 'BRL',
+        value: 97.00
+      });
+    }
   };
 
   const closeModal = () => {
@@ -127,7 +135,17 @@ function initQualificationModal() {
       const clearance = document.querySelector('input[name="medical_clearance"]:checked')?.value || '';
 
       const finalUrl = `${CHECKOUT_URL}?utm_source=landing_page&momento=${encodeURIComponent(moment)}&liberacao=${encodeURIComponent(clearance)}`;
-      
+
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', {
+          content_name: 'Recomeço Pós-Parto 30 Dias',
+          content_category: 'Curso',
+          num_items: 1,
+          currency: 'BRL',
+          value: 97.00
+        });
+      }
+
       window.location.href = finalUrl;
     });
   }
