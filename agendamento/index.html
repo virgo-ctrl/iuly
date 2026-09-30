@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Fisioterapia Pélvica em Caruaru | Dra. Iulyane Ferreira</title>
-  <meta name="description" content="Fisioterapia pélvica em Caruaru para mulheres em diferentes fases da vida. Avaliação individualizada, com acolhimento e ciência. Agende pelo WhatsApp.">
+  <title>Fisioterapia Pélvica em Caruaru e Vitória | Dra. Iulyane</title>
+  <meta name="description" content="Fisioterapia pélvica em Caruaru e Vitória de Santo Antão para mulheres em várias fases da vida. Cuidado individual, com acolhimento e ciência. Agende.">
   <meta name="author" content="Iulyane Ferreira">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://iuly.vercel.app/agendamento">
@@ -15,15 +15,15 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://iuly.vercel.app/agendamento">
   <meta property="og:site_name" content="Dra. Iulyane Ferreira">
-  <meta property="og:title" content="Fisioterapia Pélvica em Caruaru | Dra. Iulyane Ferreira">
-  <meta property="og:description" content="Fisioterapia pélvica em Caruaru, com acolhimento, ciência e cuidado individualizado. Agende sua avaliação.">
+  <meta property="og:title" content="Fisioterapia Pélvica em Caruaru e Vitória | Dra. Iulyane">
+  <meta property="og:description" content="Fisioterapia pélvica em Caruaru e Vitória de Santo Antão, com acolhimento, ciência e cuidado individualizado. Agende sua avaliação.">
   <meta property="og:image" content="https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Dra. Iulyane Ferreira, fisioterapeuta pélvica, sorrindo perto de uma janela">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fisioterapia Pélvica em Caruaru | Dra. Iulyane Ferreira">
-  <meta name="twitter:description" content="Fisioterapia pélvica em Caruaru, com acolhimento, ciência e cuidado individualizado.">
+  <meta name="twitter:title" content="Fisioterapia Pélvica em Caruaru e Vitória | Dra. Iulyane">
+  <meta name="twitter:description" content="Fisioterapia pélvica em Caruaru e Vitória de Santo Antão, com acolhimento, ciência e cuidado individualizado.">
   <meta name="twitter:image" content="https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg">
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo_verde.png">
@@ -230,6 +230,13 @@ h1 {
 .maplink { margin-top: 18px; display: inline-block; text-decoration: underline; color: var(--sage); font-weight: 600; }
 @media (min-width: 640px) { .topics { grid-template-columns: 1fr 1fr !important; } }
 @media (min-width: 900px) { .topics { grid-template-columns: repeat(3, 1fr) !important; } .faq, .where { padding: 88px 0; } .faq h2, .where h2 { font-size: 2.6rem; } }
+  .where-intro { max-width: 36rem; margin: 0 auto 26px; color: var(--text-muted); }
+.units { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 860px; margin: 0 auto; }
+.unit { background: var(--bg-surface); border-radius: 20px; padding: 24px 20px; box-shadow: 0 10px 26px rgba(79,96,77,.1); display: flex; flex-direction: column; align-items: center; }
+.unit h3 { font-family: var(--font-serif); font-weight: 600; font-size: 1.6rem; color: var(--sage); margin-bottom: 8px; }
+.unit p { margin: 0 auto 18px; color: var(--text-muted); font-size: .96rem; }
+.unit .btn { width: 100%; max-width: none; }
+@media (min-width: 720px) { .units { grid-template-columns: 1fr 1fr; } }
   </style>
 
   <!-- Meta Pixel (mesmo pixel da LP) -->
@@ -253,31 +260,65 @@ h1 {
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": [
-    "Physiotherapy",
-    "LocalBusiness"
-  ],
-  "name": "Dra. Iulyane Ferreira, Fisioterapia Pélvica",
-  "description": "Fisioterapia pélvica em Caruaru para mulheres em diferentes fases da vida, com acolhimento, ciência e cuidado individualizado.",
-  "url": "https://iuly.vercel.app/agendamento",
-  "image": "https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg",
-  "telephone": "+5581997120047",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Epic Tower, 9º andar, sala 914",
-    "addressLocality": "Caruaru",
-    "addressRegion": "PE",
-    "addressCountry": "BR"
-  },
-  "sameAs": [
-    "https://www.instagram.com/fisioiulyaneferreira"
-  ],
-  "employee": {
-    "@type": "Person",
-    "name": "Iulyane Ferreira",
-    "jobTitle": "Fisioterapeuta pélvica",
-    "sameAs": "https://www.instagram.com/fisioiulyaneferreira"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://iuly.vercel.app/agendamento#iulyane",
+      "name": "Iulyane Ferreira",
+      "jobTitle": "Fisioterapeuta pélvica",
+      "sameAs": "https://www.instagram.com/fisioiulyaneferreira"
+    },
+    {
+      "@type": [
+        "Physiotherapy",
+        "LocalBusiness"
+      ],
+      "@id": "https://iuly.vercel.app/agendamento#unidade-caruaru",
+      "name": "Dra. Iulyane Ferreira, Fisioterapia Pélvica",
+      "description": "Fisioterapia pélvica em Caruaru e Vitória de Santo Antão para mulheres em diferentes fases da vida, com acolhimento, ciência e cuidado individualizado.",
+      "url": "https://iuly.vercel.app/agendamento",
+      "image": "https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg",
+      "telephone": "+5581997120047",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Adjar da Silva Casé, 800, Indianópolis, Epic Tower (Caruaru Shopping), 9º andar, sala 914",
+        "addressLocality": "Caruaru",
+        "addressRegion": "PE",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/fisioiulyaneferreira"
+      ],
+      "employee": {
+        "@id": "https://iuly.vercel.app/agendamento#iulyane"
+      }
+    },
+    {
+      "@type": [
+        "Physiotherapy",
+        "LocalBusiness"
+      ],
+      "@id": "https://iuly.vercel.app/agendamento#unidade-vitoria",
+      "name": "Dra. Iulyane Ferreira, Fisioterapia Pélvica",
+      "description": "Fisioterapia pélvica em Caruaru e Vitória de Santo Antão para mulheres em diferentes fases da vida, com acolhimento, ciência e cuidado individualizado.",
+      "url": "https://iuly.vercel.app/agendamento",
+      "image": "https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg",
+      "telephone": "+5581997120047",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Joaquim Nabuco, 196, Matriz, em frente à Praça do Fórum",
+        "addressLocality": "Vitória de Santo Antão",
+        "addressRegion": "PE",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/fisioiulyaneferreira"
+      ],
+      "employee": {
+        "@id": "https://iuly.vercel.app/agendamento#iulyane"
+      }
+    }
+  ]
 }
   </script>
   <script type="application/ld+json">
@@ -351,10 +392,18 @@ h1 {
     },
     {
       "@type": "Question",
+      "name": "Em quais cidades você atende?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Atendo em Caruaru e em Vitória de Santo Antão, em Pernambuco. Você escolhe a unidade na hora de chamar no WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Onde é o atendimento?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "O atendimento é presencial no Epic Tower, 9º andar, sala 914, em Caruaru. O atendimento online é feito sob consulta."
+        "text": "O atendimento é presencial em duas unidades: no Epic Tower, no Caruaru Shopping, 9º andar, sala 914, em Caruaru, e na Rua Joaquim Nabuco, 196, Matriz, em Vitória de Santo Antão. O atendimento online é feito sob consulta."
       }
     },
     {
@@ -380,7 +429,7 @@ h1 {
       <div class="container hero-grid">
         <div class="hero-text">
           <h1>Seu corpo fala. Aprender a escutá-lo também é cuidado.</h1>
-          <p class="lead">Fisioterapia Pélvica em Caruaru para mulheres em diferentes fases da vida, com acolhimento, ciência e um cuidado individualizado.</p>
+          <p class="lead">Fisioterapia Pélvica em Caruaru e Vitória de Santo Antão para mulheres em diferentes fases da vida, com acolhimento, ciência e um cuidado individualizado.</p>
           <a class="btn js-wa" href="https://wa.me/5581997120047?text=Ol%C3%A1%2C%20Iulyane!%20Vim%20pelo%20seu%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica." target="_blank" rel="noopener" data-local="hero">Agendar minha avaliação →</a>
         </div>
         <div class="hero-photo">
@@ -426,6 +475,28 @@ h1 {
       </div>
     </section>
 
+    <!-- Onde atendo -->
+    <section class="where">
+      <div class="container">
+        <h2>Onde atendo</h2>
+        <p class="where-intro">Atendimento presencial em duas unidades. Atendimento online sob consulta. Os horários são combinados no agendamento.</p>
+        <div class="units">
+          <article class="unit">
+            <h3>Caruaru</h3>
+            <p>Epic Tower, no Caruaru Shopping<br>Av. Adjar da Silva Casé, 800, Indianópolis<br>9º andar, sala 914</p>
+            <a class="btn js-wa" href="https://wa.me/5581997120047?text=Ol%C3%A1%2C%20Iulyane%21%20Vim%20pelo%20seu%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica%20na%20unidade%20de%20Caruaru." target="_blank" rel="noopener" data-local="unidade-caruaru">Agendar em Caruaru →</a>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Epic+Tower+Caruaru+Shopping%2C+Av.+Adjar+da+Silva+Cas%C3%A9%2C+800%2C+Indian%C3%B3polis%2C+Caruaru%2C+PE" target="_blank" rel="noopener">Ver no Google Maps</a>
+          </article>
+          <article class="unit">
+            <h3>Vitória de Santo Antão</h3>
+            <p>Rua Joaquim Nabuco, 196, Matriz<br>Em frente à Praça do Fórum, em cima da Clínica Vitta<br>Interfone nº 2</p>
+            <a class="btn js-wa" href="https://wa.me/5581997120047?text=Ol%C3%A1%2C%20Iulyane%21%20Vim%20pelo%20seu%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica%20na%20unidade%20de%20Vit%C3%B3ria%20de%20Santo%20Ant%C3%A3o." target="_blank" rel="noopener" data-local="unidade-vitoria">Agendar em Vitória de Santo Antão →</a>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Joaquim+Nabuco%2C+196%2C+Matriz%2C+Vit%C3%B3ria+de+Santo+Ant%C3%A3o%2C+PE" target="_blank" rel="noopener">Ver no Google Maps</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="faq">
       <div class="container">
@@ -439,19 +510,10 @@ h1 {
           <details><summary><h3>A fisioterapia pélvica serve na gestação e no pós-parto?</h3></summary><p>Pode fazer parte do cuidado nas duas fases: na preparação para o parto, durante a gestação e na recuperação depois do parto, incluindo a diástase abdominal. Cada caso é avaliado individualmente.</p></details>
           <details><summary><h3>Dor na relação pode ser tratada com fisioterapia?</h3></summary><p>A dor durante a relação tem causas variadas, e a fisioterapia pélvica pode fazer parte do cuidado. A avaliação individual mostra o que está envolvido no seu caso.</p></details>
           <details><summary><h3>Quantas sessões vou precisar?</h3></summary><p>Depende da sua queixa e de como você responde ao cuidado. Na avaliação, a fisioterapeuta explica o plano e a frequência que fazem sentido para você.</p></details>
-          <details><summary><h3>Onde é o atendimento?</h3></summary><p>O atendimento é presencial no Epic Tower, 9º andar, sala 914, em Caruaru. O atendimento online é feito sob consulta.</p></details>
+          <details><summary><h3>Em quais cidades você atende?</h3></summary><p>Atendo em Caruaru e em Vitória de Santo Antão, em Pernambuco. Você escolhe a unidade na hora de chamar no WhatsApp.</p></details>
+          <details><summary><h3>Onde é o atendimento?</h3></summary><p>O atendimento é presencial em duas unidades: no Epic Tower, no Caruaru Shopping, 9º andar, sala 914, em Caruaru, e na Rua Joaquim Nabuco, 196, Matriz, em Vitória de Santo Antão. O atendimento online é feito sob consulta.</p></details>
           <details><summary><h3>Vocês atendem por plano de saúde?</h3></summary><p>Não. O atendimento é particular. Para saber valores e horários, fale com a gente pelo WhatsApp.</p></details>
         </div>
-      </div>
-    </section>
-
-    <!-- Onde atendo -->
-    <section class="where">
-      <div class="container">
-        <h2>Onde atendo</h2>
-        <p>Atendimento presencial no Epic Tower, 9º andar, sala 914, em Caruaru. Atendimento online sob consulta. Os horários são combinados no agendamento.</p>
-        <a class="btn js-wa" href="https://wa.me/5581997120047?text=Ol%C3%A1%2C%20Iulyane!%20Vim%20pelo%20seu%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica." target="_blank" rel="noopener" data-local="onde-atendo">Agendar minha avaliação →</a>
-        <p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Epic+Tower+Caruaru" target="_blank" rel="noopener">Ver Epic Tower, Caruaru, no Google Maps</a></p>
       </div>
     </section>
 
@@ -472,7 +534,7 @@ h1 {
 
   <footer class="foot">
     <div class="container">
-      <p>Dra. Iulyane Ferreira · CREFITO 241231F · Caruaru/PE</p>
+      <p>Dra. Iulyane Ferreira · CREFITO 241231F · Caruaru/PE e Vitória de Santo Antão/PE</p>
       <p><a href="https://www.instagram.com/fisioiulyaneferreira/" target="_blank" rel="noopener">@fisioiulyaneferreira</a> · <a href="/">Conheça o programa Recomeço Pós-Parto 30 Dias</a></p>
       <p class="disclaimer">As informações desta página têm caráter informativo e não substituem a avaliação profissional.</p>
     </div>
