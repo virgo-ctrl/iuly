@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Fisioterapia Pélvica para Mulheres | Dra. Iulyane Ferreira</title>
-  <meta name="description" content="Fisioterapia pélvica para mulheres em diferentes fases da vida, com acolhimento, ciência e cuidado individualizado. Agende sua avaliação com a Dra. Iulyane.">
+  <title>Fisioterapia Pélvica em Caruaru | Dra. Iulyane Ferreira</title>
+  <meta name="description" content="Fisioterapia pélvica em Caruaru para mulheres em diferentes fases da vida. Avaliação individualizada, com acolhimento e ciência. Agende pelo WhatsApp.">
   <meta name="author" content="Iulyane Ferreira">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://iuly.vercel.app/agendamento">
@@ -15,15 +15,15 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://iuly.vercel.app/agendamento">
   <meta property="og:site_name" content="Dra. Iulyane Ferreira">
-  <meta property="og:title" content="Fisioterapia Pélvica para Mulheres | Dra. Iulyane Ferreira">
-  <meta property="og:description" content="Cuidado individualizado, com acolhimento e ciência, para mulheres em diferentes fases da vida. Agende sua avaliação.">
+  <meta property="og:title" content="Fisioterapia Pélvica em Caruaru | Dra. Iulyane Ferreira">
+  <meta property="og:description" content="Fisioterapia pélvica em Caruaru, com acolhimento, ciência e cuidado individualizado. Agende sua avaliação.">
   <meta property="og:image" content="https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Dra. Iulyane Ferreira, fisioterapeuta pélvica, sorrindo perto de uma janela">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fisioterapia Pélvica para Mulheres | Dra. Iulyane Ferreira">
-  <meta name="twitter:description" content="Cuidado individualizado, com acolhimento e ciência, para mulheres em diferentes fases da vida.">
+  <meta name="twitter:title" content="Fisioterapia Pélvica em Caruaru | Dra. Iulyane Ferreira">
+  <meta name="twitter:description" content="Fisioterapia pélvica em Caruaru, com acolhimento, ciência e cuidado individualizado.">
   <meta name="twitter:image" content="https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg">
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo_verde.png">
@@ -209,6 +209,27 @@ h1 {
   .foot { padding-bottom: 36px; }
   .sticky-cta { display: none; }
 }
+  .creds { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--nude-dark); font-weight: 600; margin-bottom: 14px !important; }
+.topics { display: grid !important; grid-template-columns: 1fr !important; gap: 12px !important; }
+.topic { background: rgba(246,243,238,.1); border: 1px solid rgba(246,243,238,.22); border-radius: 16px; padding: 18px; }
+.topic h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 700; margin-bottom: 6px; color: #fff; }
+.topic p { font-size: .92rem; line-height: 1.55; color: #E7ECE6; }
+.faq { padding: 56px 0; background: var(--bg-surface); }
+.faq h2, .where h2 { font-family: var(--font-serif); font-weight: 600; font-size: 2rem; line-height: 1.15; color: var(--sage); text-align: center; margin-bottom: 24px; }
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq details { border-bottom: 1px solid rgba(79,96,77,.18); padding: 14px 0; }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 1.4rem; color: var(--nude-dark); flex: 0 0 auto; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq summary h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--text-dark); }
+.faq details p { margin-top: 10px; color: var(--text-muted); }
+.where { padding: 56px 0; background: var(--sage-light); text-align: center; }
+.where p { max-width: 36rem; margin: 0 auto 22px; color: var(--text-muted); }
+.where .btn { width: 100%; max-width: 360px; }
+.maplink { margin-top: 18px; display: inline-block; text-decoration: underline; color: var(--sage); font-weight: 600; }
+@media (min-width: 640px) { .topics { grid-template-columns: 1fr 1fr !important; } }
+@media (min-width: 900px) { .topics { grid-template-columns: repeat(3, 1fr) !important; } .faq, .where { padding: 88px 0; } .faq h2, .where h2 { font-size: 2.6rem; } }
   </style>
 
   <!-- Meta Pixel (mesmo pixel da LP) -->
@@ -230,21 +251,122 @@ h1 {
   /></noscript>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "MedicalBusiness"],
-    "name": "Dra. Iulyane Ferreira | Fisioterapia Pélvica",
-    "description": "Fisioterapia pélvica para mulheres em diferentes fases da vida, com acolhimento, ciência e cuidado individualizado.",
-    "url": "https://iuly.vercel.app/agendamento",
-    "image": "https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg",
-    "sameAs": ["https://www.instagram.com/fisioiulyaneferreira/"],
-    "employee": {
-      "@type": "Person",
-      "name": "Iulyane Ferreira",
-      "jobTitle": "Fisioterapeuta pélvica",
-      "sameAs": "https://www.instagram.com/fisioiulyaneferreira/"
-    }
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "Physiotherapy",
+    "LocalBusiness"
+  ],
+  "name": "Dra. Iulyane Ferreira, Fisioterapia Pélvica",
+  "description": "Fisioterapia pélvica em Caruaru para mulheres em diferentes fases da vida, com acolhimento, ciência e cuidado individualizado.",
+  "url": "https://iuly.vercel.app/agendamento",
+  "image": "https://iuly.vercel.app/assets/images/agendamento/og-agendamento.jpg",
+  "telephone": "+5581997120047",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Epic Tower, 9º andar, sala 914",
+    "addressLocality": "Caruaru",
+    "addressRegion": "PE",
+    "addressCountry": "BR"
+  },
+  "sameAs": [
+    "https://www.instagram.com/fisioiulyaneferreira"
+  ],
+  "employee": {
+    "@type": "Person",
+    "name": "Iulyane Ferreira",
+    "jobTitle": "Fisioterapeuta pélvica",
+    "sameAs": "https://www.instagram.com/fisioiulyaneferreira"
   }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é fisioterapia pélvica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o cuidado com os músculos e as funções da região pélvica, como o controle da urina e do intestino e a vida sexual. A fisioterapeuta avalia o seu caso e monta um plano individual."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso ter tido filho para fazer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. A fisioterapia pélvica atende mulheres em várias fases da vida, com ou sem gestação. O que indica o cuidado é a sua queixa e a avaliação."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Escape de urina é normal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É comum, mas isso não quer dizer que você precise conviver com ele. Vale fazer uma avaliação para entender a causa e ver se a fisioterapia pode ajudar no seu caso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como é a primeira consulta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A primeira avaliação dura cerca de 1h a 1h30. Começa com uma conversa sobre seus sintomas, sua rotina e sua história. Depois vem a avaliação física e a definição do plano de cuidado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A avaliação dói?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ela é feita com respeito aos seus limites, com conversa antes e explicação de cada passo. Você pode pedir para parar a qualquer momento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A fisioterapia pélvica serve na gestação e no pós-parto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pode fazer parte do cuidado nas duas fases: na preparação para o parto, durante a gestação e na recuperação depois do parto, incluindo a diástase abdominal. Cada caso é avaliado individualmente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dor na relação pode ser tratada com fisioterapia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A dor durante a relação tem causas variadas, e a fisioterapia pélvica pode fazer parte do cuidado. A avaliação individual mostra o que está envolvido no seu caso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quantas sessões vou precisar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende da sua queixa e de como você responde ao cuidado. Na avaliação, a fisioterapeuta explica o plano e a frequência que fazem sentido para você."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onde é o atendimento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O atendimento é presencial no Epic Tower, 9º andar, sala 914, em Caruaru. O atendimento online é feito sob consulta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês atendem por plano de saúde?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O atendimento é particular. Para saber valores e horários, fale com a gente pelo WhatsApp."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -258,7 +380,7 @@ h1 {
       <div class="container hero-grid">
         <div class="hero-text">
           <h1>Seu corpo fala. Aprender a escutá-lo também é cuidado.</h1>
-          <p class="lead">Fisioterapia Pélvica para mulheres em diferentes fases da vida, com acolhimento, ciência e um cuidado individualizado.</p>
+          <p class="lead">Fisioterapia Pélvica em Caruaru para mulheres em diferentes fases da vida, com acolhimento, ciência e um cuidado individualizado.</p>
           <a class="btn js-wa" href="https://wa.me/5581997120047?text=Ol%C3%A1%2C%20Iulyane!%20Vim%20pelo%20seu%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica." target="_blank" rel="noopener" data-local="hero">Agendar minha avaliação →</a>
         </div>
         <div class="hero-photo">
@@ -275,6 +397,7 @@ h1 {
         </div>
         <div class="about-text">
           <p class="script">Prazer, eu sou Iulyane.</p>
+          <p class="creds">Fisioterapeuta, CREFITO 241231F</p>
           <p class="big">Sou fisioterapeuta, apaixonada pelo cuidado com a mulher e pela forma como a fisioterapia pode transformar a relação com o próprio corpo.</p>
           <p>Na fisioterapia pélvica, meu objetivo é olhar para você de forma integral, entendendo seus sintomas, sua rotina, sua história e o momento de vida que está vivendo.</p>
           <p>Meu atendimento é baseado em escuta, avaliação individualizada e estratégias respaldadas pela ciência, sempre respeitando seus limites e objetivos.</p>
@@ -287,20 +410,48 @@ h1 {
       <div class="container">
         <h2>Seu corpo mudou. E você não precisa simplesmente se acostumar.</h2>
         <p class="help-intro">A fisioterapia pélvica pode fazer parte do cuidado em situações como:</p>
-        <ul class="topics">
-          <li>Escapes de urina</li>
-          <li>Urgência urinária</li>
-          <li>Dor pélvica</li>
-          <li>Dor durante a relação</li>
-          <li>Alterações intestinais</li>
-          <li>Constipação</li>
-          <li>Preparação para a gestação</li>
-          <li>Gestação</li>
-          <li>Preparação para o parto</li>
-          <li>Recuperação no pós-parto</li>
-          <li>Diástase abdominal</li>
-          <li>Alterações relacionadas ao assoalho pélvico</li>
-        </ul>
+        <div class="topics">
+          <article class="topic"><h3>Escapes de urina</h3><p>Perder urina ao tossir, rir, correr ou pular é comum, mas não é algo que você precise aceitar. A avaliação ajuda a entender o motivo e o cuidado é montado para o seu caso.</p></article>
+          <article class="topic"><h3>Urgência urinária</h3><p>Aquela vontade repentina de ir ao banheiro, difícil de segurar. A fisioterapia pode fazer parte do cuidado, junto com orientações sobre hábitos.</p></article>
+          <article class="topic"><h3>Dor pélvica</h3><p>Dor na região do quadril, do baixo ventre ou perto da vagina, que aparece de vez em quando ou o tempo todo. Entender o que a provoca é o primeiro passo.</p></article>
+          <article class="topic"><h3>Dor durante a relação</h3><p>Não precisa ser tratada como normal. Pode ter relação com a musculatura do assoalho pélvico, e a avaliação ajuda a entender.</p></article>
+          <article class="topic"><h3>Alterações intestinais e constipação</h3><p>Intestino preso, esforço para evacuar ou sensação de esvaziamento incompleto também podem envolver o assoalho pélvico.</p></article>
+          <article class="topic"><h3>Preparação para a gestação</h3><p>Cuidar do corpo antes de engravidar ajuda a chegar à gestação mais consciente das suas necessidades.</p></article>
+          <article class="topic"><h3>Gestação</h3><p>Acompanhamento para lidar com as mudanças do corpo e com as dores, e para se preparar para o momento do parto.</p></article>
+          <article class="topic"><h3>Preparação para o parto</h3><p>Orientações sobre respiração, posições e relaxamento do assoalho pélvico.</p></article>
+          <article class="topic"><h3>Recuperação no pós-parto</h3><p>Cuidado com o corpo depois do parto, respeitando o seu tempo e o tipo de parto.</p></article>
+          <article class="topic"><h3>Diástase abdominal</h3><p>Separação da musculatura do abdômen que pode aparecer na gestação ou depois. A avaliação define o melhor caminho.</p></article>
+          <article class="topic"><h3>Alterações no assoalho pélvico</h3><p>Sensação de peso, pressão ou de “bolinha” na vagina merece avaliação profissional.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-list">
+          <details><summary><h3>O que é fisioterapia pélvica?</h3></summary><p>É o cuidado com os músculos e as funções da região pélvica, como o controle da urina e do intestino e a vida sexual. A fisioterapeuta avalia o seu caso e monta um plano individual.</p></details>
+          <details><summary><h3>Preciso ter tido filho para fazer?</h3></summary><p>Não. A fisioterapia pélvica atende mulheres em várias fases da vida, com ou sem gestação. O que indica o cuidado é a sua queixa e a avaliação.</p></details>
+          <details><summary><h3>Escape de urina é normal?</h3></summary><p>É comum, mas isso não quer dizer que você precise conviver com ele. Vale fazer uma avaliação para entender a causa e ver se a fisioterapia pode ajudar no seu caso.</p></details>
+          <details><summary><h3>Como é a primeira consulta?</h3></summary><p>A primeira avaliação dura cerca de 1h a 1h30. Começa com uma conversa sobre seus sintomas, sua rotina e sua história. Depois vem a avaliação física e a definição do plano de cuidado.</p></details>
+          <details><summary><h3>A avaliação dói?</h3></summary><p>Ela é feita com respeito aos seus limites, com conversa antes e explicação de cada passo. Você pode pedir para parar a qualquer momento.</p></details>
+          <details><summary><h3>A fisioterapia pélvica serve na gestação e no pós-parto?</h3></summary><p>Pode fazer parte do cuidado nas duas fases: na preparação para o parto, durante a gestação e na recuperação depois do parto, incluindo a diástase abdominal. Cada caso é avaliado individualmente.</p></details>
+          <details><summary><h3>Dor na relação pode ser tratada com fisioterapia?</h3></summary><p>A dor durante a relação tem causas variadas, e a fisioterapia pélvica pode fazer parte do cuidado. A avaliação individual mostra o que está envolvido no seu caso.</p></details>
+          <details><summary><h3>Quantas sessões vou precisar?</h3></summary><p>Depende da sua queixa e de como você responde ao cuidado. Na avaliação, a fisioterapeuta explica o plano e a frequência que fazem sentido para você.</p></details>
+          <details><summary><h3>Onde é o atendimento?</h3></summary><p>O atendimento é presencial no Epic Tower, 9º andar, sala 914, em Caruaru. O atendimento online é feito sob consulta.</p></details>
+          <details><summary><h3>Vocês atendem por plano de saúde?</h3></summary><p>Não. O atendimento é particular. Para saber valores e horários, fale com a gente pelo WhatsApp.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Onde atendo -->
+    <section class="where">
+      <div class="container">
+        <h2>Onde atendo</h2>
+        <p>Atendimento presencial no Epic Tower, 9º andar, sala 914, em Caruaru. Atendimento online sob consulta. Os horários são combinados no agendamento.</p>
+        <a class="btn js-wa" href="https://wa.me/5581997120047?text=Ol%C3%A1%2C%20Iulyane!%20Vim%20pelo%20seu%20site%20e%20quero%20agendar%20minha%20avalia%C3%A7%C3%A3o%20de%20fisioterapia%20p%C3%A9lvica." target="_blank" rel="noopener" data-local="onde-atendo">Agendar minha avaliação →</a>
+        <p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Epic+Tower+Caruaru" target="_blank" rel="noopener">Ver Epic Tower, Caruaru, no Google Maps</a></p>
       </div>
     </section>
 
@@ -321,8 +472,9 @@ h1 {
 
   <footer class="foot">
     <div class="container">
-      <p>Dra. Iulyane Ferreira · Fisioterapia Pélvica · <a href="https://www.instagram.com/fisioiulyaneferreira/" target="_blank" rel="noopener">@fisioiulyaneferreira</a></p>
-      <p class="disclaimer">O conteúdo desta página tem caráter informativo e não substitui a avaliação individual. Cada caso é avaliado de forma personalizada.</p>
+      <p>Dra. Iulyane Ferreira · CREFITO 241231F · Caruaru/PE</p>
+      <p><a href="https://www.instagram.com/fisioiulyaneferreira/" target="_blank" rel="noopener">@fisioiulyaneferreira</a> · <a href="/">Conheça o programa Recomeço Pós-Parto 30 Dias</a></p>
+      <p class="disclaimer">As informações desta página têm caráter informativo e não substituem a avaliação profissional.</p>
     </div>
   </footer>
 

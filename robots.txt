@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iuly.vercel.app/sitemap.xml
