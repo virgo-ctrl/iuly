@@ -1,6 +1,10 @@
 # Dra. Iulyane Ferreira, Fisioterapia Pélvica
 
-> Iulyane Ferreira é fisioterapeuta pélvica (CREFITO 241231F) e atende mulheres em diferentes fases da vida, com acolhimento, avaliação individualizada e estratégias respaldadas pela ciência. O atendimento é particular, presencial em duas unidades, em Caruaru/PE (Epic Tower, no Caruaru Shopping, Av. Adjar da Silva Casé, 800, Indianópolis, 9º andar, sala 914) e em Vitória de Santo Antão/PE (Rua Joaquim Nabuco, 196, Matriz), e online sob consulta.
+> Iulyane Ferreira é fisioterapeuta pélvica (CREFITO 241231-F, especialista em saúde da mulher, com 10 anos de atuação) e atende mulheres em diferentes fases da vida, com acolhimento, avaliação individualizada e estratégias respaldadas pela ciência. O atendimento é particular, presencial em duas unidades, em Caruaru/PE (Epic Tower, no Caruaru Shopping, Av. Adjar da Silva Casé, 800, Indianópolis, 9º andar, sala 914) e em Vitória de Santo Antão/PE (Rua Joaquim Nabuco, 196, Matriz), e online sob consulta.
+
+## Atendimentos
+- Pós-parto imediato: cuidado especializado nos primeiros momentos após o parto, no hospital ou em casa, de acordo com a necessidade da mãe.
+- Reabilitação Pós-Parto (RPP + LPF): reabilitação individualizada da musculatura abdominal, do assoalho pélvico, da postura e da respiração após a gestação.
 
 ## Páginas
 - [Agendamento de avaliação](https://iuly.vercel.app/agendamento): fisioterapia pélvica em Caruaru e Vitória de Santo Antão, situações em que o cuidado pode ajudar, perguntas frequentes e contato pelo WhatsApp.
