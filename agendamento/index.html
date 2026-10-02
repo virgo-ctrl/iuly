@@ -138,6 +138,37 @@ h1 {
   background: var(--nude); transform: rotate(-8deg);
 }
 
+/* Bio ampliada */
+.about-text .about-sub { font-family: var(--font-serif); font-weight: 600; font-size: 1.5rem; line-height: 1.2; color: var(--sage); margin: 26px 0 10px; }
+.formacoes { list-style: none; display: grid; gap: 8px; margin-bottom: 8px; }
+.formacoes li { position: relative; padding-left: 22px; color: var(--text-muted); font-size: 0.98rem; line-height: 1.45; }
+.formacoes li::before { content: ""; position: absolute; left: 0; top: 7px; width: 10px; height: 10px; border-radius: 0 100% 0 100%; background: var(--nude); transform: rotate(-8deg); }
+.about-text .about-close { font-family: var(--font-serif); font-weight: 600; font-size: 1.35rem; color: var(--nude-dark); margin-top: 6px; }
+
+/* Atendimentos pós-parto */
+.services { padding: 56px 0; background: var(--bg-main); }
+.services h2 { font-family: var(--font-serif); font-weight: 600; font-size: 2rem; line-height: 1.15; text-align: center; color: var(--sage); margin-bottom: 12px; }
+.services-intro { text-align: center; color: var(--text-muted); margin: 0 auto 28px; max-width: 620px; }
+.service-cards { display: grid; gap: 20px; grid-template-columns: 1fr; }
+.service-card { background: var(--bg-surface); border: 1px solid var(--sage-light); border-radius: 24px; padding: 26px 22px; box-shadow: 0 10px 26px rgba(79, 96, 77, 0.08); display: flex; flex-direction: column; }
+.service-card h3 { font-family: var(--font-serif); font-weight: 600; font-size: 1.7rem; line-height: 1.15; color: var(--sage); margin-bottom: 12px; }
+.service-tag { display: inline-block; vertical-align: middle; margin-left: 6px; padding: 3px 10px; font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; color: var(--nude-dark); background: var(--nude-light); border-radius: 999px; }
+.service-card h4 { font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; color: var(--nude-dark); margin: 18px 0 6px; }
+.service-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.55; margin-bottom: 12px; }
+.service-card .service-lead { font-family: var(--font-serif); font-size: 1.2rem; line-height: 1.35; color: var(--text-dark); }
+.service-card .service-list-title { font-weight: 600; color: var(--text-dark); margin-top: 6px; }
+.service-list { list-style: none; display: grid; gap: 8px; margin-bottom: 14px; }
+.service-list li { position: relative; padding-left: 22px; color: var(--text-muted); font-size: 0.97rem; line-height: 1.45; }
+.service-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 10px; height: 10px; border-radius: 0 100% 0 100%; background: var(--sage); transform: rotate(-8deg); }
+.service-card .service-close { font-weight: 600; color: var(--sage); margin-top: 6px; margin-bottom: 20px; }
+.service-card .btn { margin-top: auto; width: 100%; }
+@media (min-width: 900px) {
+  .services { padding: 96px 0; }
+  .services h2 { font-size: 2.6rem; }
+  .service-cards { grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+  .service-card { padding: 34px 30px; }
+}
+
 /* 4. Fechamento */
 .closing { padding: 56px 0 64px; background: var(--nude-light); }
 .closing-grid { display: flex; flex-direction: column; gap: 28px; align-items: center; text-align: center; }
@@ -265,8 +296,27 @@ h1 {
       "@type": "Person",
       "@id": "https://iuly.vercel.app/agendamento#iulyane",
       "name": "Iulyane Ferreira",
-      "jobTitle": "Fisioterapeuta pélvica",
+      "jobTitle": "Fisioterapeuta, especialista em saúde da mulher",
+      "description": "Fisioterapeuta há 10 anos, com atuação em saúde da mulher, gestação, parto e pós-parto. CREFITO 241231-F.",
       "sameAs": "https://www.instagram.com/fisioiulyaneferreira"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://iuly.vercel.app/agendamento#pos-parto-imediato",
+      "name": "Pós-parto imediato",
+      "serviceType": "Fisioterapia no pós-parto imediato",
+      "description": "Cuidado especializado para os primeiros momentos após o parto, no hospital ou em casa, com avaliação individual, orientações de conforto, cicatriz, assoalho pélvico, amamentação e retomada gradual das atividades.",
+      "provider": { "@id": "https://iuly.vercel.app/agendamento#iulyane" },
+      "areaServed": ["Caruaru", "Vitória de Santo Antão"]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://iuly.vercel.app/agendamento#reabilitacao-pos-parto",
+      "name": "Reabilitação Pós-Parto (RPP + LPF)",
+      "serviceType": "Reabilitação pós-parto",
+      "description": "Processo individualizado de reabilitação após a gestação e o parto, com RPP (Reabilitação Pós-Parto) e LPF (Low Pressure Fitness), para recuperar função, força, controle corporal e confiança nos movimentos.",
+      "provider": { "@id": "https://iuly.vercel.app/agendamento#iulyane" },
+      "areaServed": ["Caruaru", "Vitória de Santo Antão"]
     },
     {
       "@type": [
@@ -376,6 +426,22 @@ h1 {
     },
     {
       "@type": "Question",
+      "name": "O que é o atendimento de pós-parto imediato?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É um cuidado especializado para os primeiros momentos após o parto, feito no hospital ou na sua casa, de acordo com a necessidade da mãe. Inclui avaliação, orientações de conforto, posicionamento e mobilidade, cuidados com a cicatriz, orientações para o assoalho pélvico e para a amamentação, e o uso de taping ou da órtese Calcinha Kinesio Curve quando indicados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que são RPP e LPF na reabilitação pós-parto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "RPP é a Reabilitação Pós-Parto, um trabalho de consciência corporal, respiração e controle da musculatura abdominal e do assoalho pélvico. LPF é o Low Pressure Fitness, que usa técnicas posturais e respiratórias e entra de forma progressiva, quando há indicação. A escolha das técnicas é feita na avaliação, de forma individual."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Dor na relação pode ser tratada com fisioterapia?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -446,10 +512,26 @@ h1 {
         </div>
         <div class="about-text">
           <p class="script">Prazer, eu sou Iulyane.</p>
-          <p class="creds">Fisioterapeuta, CREFITO 241231F</p>
-          <p class="big">Sou fisioterapeuta, apaixonada pelo cuidado com a mulher e pela forma como a fisioterapia pode transformar a relação com o próprio corpo.</p>
-          <p>Na fisioterapia pélvica, meu objetivo é olhar para você de forma integral, entendendo seus sintomas, sua rotina, sua história e o momento de vida que está vivendo.</p>
-          <p>Meu atendimento é baseado em escuta, avaliação individualizada e estratégias respaldadas pela ciência, sempre respeitando seus limites e objetivos.</p>
+          <p class="creds">Especialista em Saúde da Mulher | CREFITO 241231-F</p>
+          <p class="big">Há 10 anos, dedico meu trabalho ao cuidado e à reabilitação da mulher, com um olhar especializado para as transformações do corpo durante a gestação, o parto e o pós-parto.</p>
+          <p>Minha atuação une conhecimento técnico, experiência clínica e cuidado humanizado, respeitando a individualidade, o momento e as necessidades de cada mulher.</p>
+          <h2 class="about-sub">Principais formações</h2>
+          <ul class="formacoes">
+            <li>Formação em Método Gasquet: Pré e Pós-Parto e Diástase Abdominal</li>
+            <li>Formação em RPP: Reabilitação Pós-Parto</li>
+            <li>Formação em LPF: Low Pressure Fitness, aplicado à reabilitação pós-parto</li>
+            <li>Formação em Terapias Manuais aplicadas à Pelve e ao Assoalho Pélvico</li>
+            <li>Formação como Doula pelo Instituto GAMA (Grupo de Apoio à Maternidade Ativa)</li>
+            <li>Instrutora de Pilates Clássico, formada pela Pilates Zone (2018)</li>
+            <li>Formação e habilitação para utilização de Taping no cuidado pós-parto</li>
+            <li>Habilitação para orientação e utilização da órtese Calcinha Kinesio Curve</li>
+          </ul>
+          <h2 class="about-sub">Uma experiência construída ao longo de 10 anos</h2>
+          <p>Minha trajetória profissional é dedicada ao cuidado da mulher e ao entendimento das mudanças que acontecem no corpo durante e após a gestação.</p>
+          <p>Por meio de uma abordagem individualizada, utilizo diferentes recursos e métodos de reabilitação para acompanhar cada mulher em seu processo de recuperação, sempre respeitando seu tempo, suas necessidades e seus objetivos.</p>
+          <h2 class="about-sub">Meu propósito</h2>
+          <p>Acredito que o pós-parto merece ser vivido com informação, acolhimento e cuidado especializado. Por isso, cada atendimento é pensado para olhar para a mulher como um todo: não apenas para o abdômen, para a cicatriz ou para o assoalho pélvico, mas para a sua experiência de se tornar mãe e de reencontrar o próprio corpo depois da gestação.</p>
+          <p class="about-close">Cuidar do seu corpo também é cuidar de você.</p>
         </div>
       </div>
     </section>
@@ -471,6 +553,52 @@ h1 {
           <article class="topic"><h3>Recuperação no pós-parto</h3><p>Cuidado com o corpo depois do parto, respeitando o seu tempo e o tipo de parto.</p></article>
           <article class="topic"><h3>Diástase abdominal</h3><p>Separação da musculatura do abdômen que pode aparecer na gestação ou depois. A avaliação define o melhor caminho.</p></article>
           <article class="topic"><h3>Alterações no assoalho pélvico</h3><p>Sensação de peso, pressão ou de “bolinha” na vagina merece avaliação profissional.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atendimentos pós-parto -->
+    <section class="services" id="posparto">
+      <div class="container">
+        <h2>Atendimentos para o pós-parto</h2>
+        <p class="services-intro">Dois cuidados pensados para momentos diferentes da recuperação, sempre a partir da sua avaliação individual.</p>
+        <div class="service-cards">
+          <article class="service-card" id="posparto-imediato">
+            <h3>Pós-parto imediato</h3>
+            <p class="service-lead">Um cuidado especializado para os primeiros momentos após o parto, realizado no hospital ou no conforto da sua casa, de acordo com a necessidade da mãe.</p>
+            <p>O atendimento é individualizado e tem como objetivo oferecer acolhimento, orientação e cuidados específicos para esse período tão importante da recuperação.</p>
+            <p class="service-list-title">Durante a consulta, podem ser realizados:</p>
+            <ul class="service-list">
+              <li>Avaliação do estado geral e das principais queixas do pós-parto;</li>
+              <li>Orientações para posicionamento, mobilidade e cuidados nas atividades do dia a dia;</li>
+              <li>Orientações para conforto e recuperação abdominal e pélvica;</li>
+              <li>Aplicação de taping, quando indicada, como recurso complementar para conforto, suporte e auxílio no manejo das alterações comuns do pós-parto;</li>
+              <li>Orientações e cuidados relacionados à cicatriz, quando houver cesariana ou outro procedimento;</li>
+              <li>Avaliação e orientações iniciais para o assoalho pélvico;</li>
+              <li>Orientação quanto ao uso da órtese/Calcinha Kinesio Curve, incluindo indicação, colocação e utilização adequada, conforme a avaliação individual;</li>
+              <li>Orientações para amamentação, posicionamento e manejo corporal, quando necessário;</li>
+              <li>Orientações sobre sinais de atenção e cuidados durante a recuperação;</li>
+              <li>Orientações para retomada gradual dos movimentos e das atividades.</li>
+            </ul>
+            <p>O atendimento respeita o tipo de parto, o tempo de pós-parto, as condições clínicas e as necessidades individuais de cada mulher.</p>
+            <p class="service-close">Um cuidado completo para os primeiros dias: acolher, orientar e proporcionar mais conforto durante o início da sua recuperação.</p>
+            <a class="btn js-wa" href="https://wa.me/5581997120047?text=Ol%C3%A1%2C%20Iulyane%21%20Vim%20pelo%20seu%20site%20e%20quero%20saber%20mais%20sobre%20o%20atendimento%20de%20p%C3%B3s-parto%20imediato." target="_blank" rel="noopener" data-local="posparto-imediato">Saber mais sobre o pós-parto imediato →</a>
+          </article>
+
+          <article class="service-card" id="reabilitacao-posparto">
+            <h3>Reabilitação Pós-Parto <span class="service-tag">RPP + LPF</span></h3>
+            <p class="service-lead">Reconecte-se com o seu corpo após a gestação.</p>
+            <p>A gravidez e o parto provocam mudanças importantes na musculatura abdominal, no assoalho pélvico, na postura e na respiração.</p>
+            <p>A reabilitação pós-parto é um processo individualizado que busca recuperar, progressivamente, função, força, controle corporal e confiança nos movimentos.</p>
+            <h4>RPP: Reabilitação Pós-Parto</h4>
+            <p>Uma abordagem direcionada às necessidades específicas do corpo após a gestação e o parto. O trabalho envolve consciência corporal, respiração, controle e coordenação da musculatura abdominal e do assoalho pélvico, respeitando o momento de recuperação de cada mulher.</p>
+            <h4>LPF: Low Pressure Fitness</h4>
+            <p>O LPF utiliza técnicas posturais e respiratórias associadas ao controle corporal, podendo integrar o processo de reeducação abdominal e postural quando houver indicação. A prática é inserida de forma progressiva, considerando a avaliação individual e o momento adequado para cada paciente.</p>
+            <h4>Seu tratamento é individual</h4>
+            <p>A escolha das técnicas, exercícios e progressões é feita a partir da avaliação e das características de cada pós-parto. O objetivo não é apenas recuperar o abdômen esteticamente. É recuperar função, controle, consciência corporal e segurança para voltar a se movimentar.</p>
+            <p class="service-close">Agende sua avaliação e descubra qual estratégia de reabilitação é mais adequada para o seu momento.</p>
+            <a class="btn js-wa" href="https://wa.me/5581997120047?text=Ol%C3%A1%2C%20Iulyane%21%20Vim%20pelo%20seu%20site%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20de%20reabilita%C3%A7%C3%A3o%20p%C3%B3s-parto%20%28RPP%20%2B%20LPF%29." target="_blank" rel="noopener" data-local="rpp-lpf">Agendar minha avaliação →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -508,6 +636,8 @@ h1 {
           <details><summary><h3>Como é a primeira consulta?</h3></summary><p>A primeira avaliação dura cerca de 1h a 1h30. Começa com uma conversa sobre seus sintomas, sua rotina e sua história. Depois vem a avaliação física e a definição do plano de cuidado.</p></details>
           <details><summary><h3>A avaliação dói?</h3></summary><p>Ela é feita com respeito aos seus limites, com conversa antes e explicação de cada passo. Você pode pedir para parar a qualquer momento.</p></details>
           <details><summary><h3>A fisioterapia pélvica serve na gestação e no pós-parto?</h3></summary><p>Pode fazer parte do cuidado nas duas fases: na preparação para o parto, durante a gestação e na recuperação depois do parto, incluindo a diástase abdominal. Cada caso é avaliado individualmente.</p></details>
+          <details><summary><h3>O que é o atendimento de pós-parto imediato?</h3></summary><p>É um cuidado especializado para os primeiros momentos após o parto, feito no hospital ou na sua casa, de acordo com a necessidade da mãe. Inclui avaliação, orientações de conforto, posicionamento e mobilidade, cuidados com a cicatriz, orientações para o assoalho pélvico e para a amamentação, e o uso de taping ou da órtese Calcinha Kinesio Curve quando indicados.</p></details>
+          <details><summary><h3>O que são RPP e LPF na reabilitação pós-parto?</h3></summary><p>RPP é a Reabilitação Pós-Parto, um trabalho de consciência corporal, respiração e controle da musculatura abdominal e do assoalho pélvico. LPF é o Low Pressure Fitness, que usa técnicas posturais e respiratórias e entra de forma progressiva, quando há indicação. A escolha das técnicas é feita na avaliação, de forma individual.</p></details>
           <details><summary><h3>Dor na relação pode ser tratada com fisioterapia?</h3></summary><p>A dor durante a relação tem causas variadas, e a fisioterapia pélvica pode fazer parte do cuidado. A avaliação individual mostra o que está envolvido no seu caso.</p></details>
           <details><summary><h3>Quantas sessões vou precisar?</h3></summary><p>Depende da sua queixa e de como você responde ao cuidado. Na avaliação, a fisioterapeuta explica o plano e a frequência que fazem sentido para você.</p></details>
           <details><summary><h3>Em quais cidades você atende?</h3></summary><p>Atendo em Caruaru e em Vitória de Santo Antão, em Pernambuco. Você escolhe a unidade na hora de chamar no WhatsApp.</p></details>
@@ -534,7 +664,7 @@ h1 {
 
   <footer class="foot">
     <div class="container">
-      <p>Dra. Iulyane Ferreira · CREFITO 241231F · Caruaru/PE e Vitória de Santo Antão/PE</p>
+      <p>Dra. Iulyane Ferreira · CREFITO 241231-F · Caruaru/PE e Vitória de Santo Antão/PE</p>
       <p><a href="https://www.instagram.com/fisioiulyaneferreira/" target="_blank" rel="noopener">@fisioiulyaneferreira</a> · <a href="/">Conheça o programa Recomeço Pós-Parto 30 Dias</a></p>
       <p class="disclaimer">As informações desta página têm caráter informativo e não substituem a avaliação profissional.</p>
     </div>
