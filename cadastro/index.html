@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de paciente | Dra. Iulyane Ferreira</title>
+  <meta name="description" content="Cadastro de pacientes com atendimento já agendado com a Dra. Iulyane Ferreira.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#F6F3EE">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo_verde.png">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cormorant-garamond-600.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plus-jakarta-sans.woff2" crossorigin>
+  <style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600.woff2) format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/assets/fonts/plus-jakarta-sans.woff2) format('woff2')}
+@font-face{font-family:'Alex Brush';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/alex-brush-400.woff2) format('woff2')}
+:root {
+  --bg-main: #F6F3EE; --bg-surface: #FFFFFF;
+  --sage: #4F604D; --sage-hover: #3E4D3C;
+  --nude: #B89379; --nude-dark: #8A6650;
+  --text-dark: #242E25; --text-muted: #4A574C; --error: #A3392F;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Alex Brush', cursive;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg-main); -webkit-text-size-adjust: 100%; }
+body { font-family: var(--font-sans); color: var(--text-dark); background: var(--bg-main); line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+.wrap { max-width: 520px; margin: 0 auto; padding: 28px 20px 48px; }
+.brand { font-family: var(--font-script); font-size: 2.1rem; line-height: 1; color: var(--sage); text-align: center; }
+.brand span { display: block; font-family: var(--font-sans); font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--nude-dark); margin-top: 6px; }
+h1 { font-family: var(--font-serif); font-weight: 600; font-size: 2.1rem; line-height: 1.12; color: var(--sage); text-align: center; margin: 28px 0 10px; }
+.lead { text-align: center; color: var(--text-muted); margin-bottom: 24px; }
+form, .done { position: relative; background: var(--bg-surface); border-radius: 20px; padding: 24px 20px; box-shadow: 0 14px 34px rgba(79,96,77,.12); }
+.field { margin-bottom: 18px; }
+label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: 6px; }
+input[type=text], input[type=date], input[type=tel] {
+  width: 100%; min-height: 52px; padding: 12px 14px; font: inherit; font-size: 1rem; color: var(--text-dark);
+  background: var(--bg-main); border: 1.5px solid #D9D3C9; border-radius: 12px;
+}
+input:focus-visible { outline: 3px solid var(--nude); outline-offset: 1px; border-color: var(--sage); }
+input[aria-invalid=true] { border-color: var(--error); }
+.err { color: var(--error); font-size: .85rem; margin-top: 5px; }
+.consent { display: flex; gap: 10px; align-items: flex-start; font-size: .88rem; color: var(--text-muted); margin-bottom: 20px; }
+.consent input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--sage); flex: none; }
+.consent label { font-weight: 400; font-size: inherit; margin: 0; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.btn { width: 100%; min-height: 54px; padding: 14px 32px; background: var(--sage); color: #fff; font: inherit; font-weight: 600; font-size: 1rem; border: 0; border-radius: 9999px; cursor: pointer; box-shadow: 0 10px 24px rgba(79,96,77,.22); transition: background .2s; }
+.btn:hover, .btn:focus-visible { background: var(--sage-hover); }
+.btn:focus-visible { outline: 3px solid var(--nude); outline-offset: 3px; }
+.btn[disabled] { opacity: .65; cursor: wait; }
+.form-error { color: var(--error); text-align: center; font-size: .92rem; margin-top: 14px; }
+.done { text-align: center; }
+.done h2 { font-family: var(--font-serif); font-size: 1.8rem; color: var(--sage); margin-bottom: 8px; }
+.done p { color: var(--text-muted); }
+[hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand">Iulyane Ferreira<span>Fisioterapia pélvica</span></div>
+
+    <div id="formArea">
+      <h1>Cadastro de paciente</h1>
+      <p class="lead">Preencha seus dados para confirmar o atendimento que você já agendou.</p>
+
+      <form id="cadastro" novalidate>
+        <div class="field">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" required maxlength="120">
+          <div class="err" id="err-nome" role="alert"></div>
+        </div>
+        <div class="field">
+          <label for="nascimento">Data de nascimento</label>
+          <input type="date" id="nascimento" name="nascimento" autocomplete="bday" required min="1900-01-01">
+          <div class="err" id="err-nascimento" role="alert"></div>
+        </div>
+        <div class="field">
+          <label for="cidade">Cidade</label>
+          <input type="text" id="cidade" name="cidade" autocomplete="address-level2" required maxlength="80">
+          <div class="err" id="err-cidade" role="alert"></div>
+        </div>
+        <div class="field">
+          <label for="cpf">CPF</label>
+          <input type="tel" id="cpf" name="cpf" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" required maxlength="14">
+          <div class="err" id="err-cpf" role="alert"></div>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="website">Não preencha este campo</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="aceite" name="aceite" required>
+          <label for="aceite">Autorizo o uso dos meus dados apenas para o cadastro e o atendimento com a Dra. Iulyane.</label>
+        </div>
+        <div class="err" id="err-aceite" role="alert" style="margin:-12px 0 16px"></div>
+
+        <button type="submit" class="btn" id="enviar">Enviar cadastro</button>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+      </form>
+    </div>
+
+    <section class="done" id="done" hidden aria-live="polite">
+      <h2>Cadastro recebido</h2>
+      <p>Obrigada! Seus dados foram enviados. Nos vemos no dia do seu atendimento.</p>
+    </section>
+  </main>
+  <script src="/cadastro/cadastro.js" defer></script>
+</body>
+</html>
